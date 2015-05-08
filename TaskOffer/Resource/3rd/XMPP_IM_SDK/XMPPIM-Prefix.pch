@@ -1,0 +1,254 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import <CoreData/CoreData.h>
+//    #import "HexColor.h"
+
+#define kHost                                                 @"host"
+#define kMyJID                                                @"myjid"
+#define kPS                                                   @"password"
+#define kRoomJID                                              @"myroom"
+#define kDOMAIN                                               @"imserver"
+#define kGROUPCHATLOGO                                        @"conference.imserver"
+#define kSuccess                                              @"1"
+#define kFail                                                 @"0"
+#define kJID                                                  @"myJID"
+#define kDefaultJID    [XMPPJID jidWithString:[[NSUserDefaults standardUserDefaults] objectForKey:kJID]]
+#define kDefaultIcon   [UIImage imageNamed:@"placeholder"]
+
+
+//#define kHOSTNAME [[NSUserDefaults standardUserDefaults] objectForKey:@"lalala"]
+#define kHOSTNAME @"123.57.137.163"
+//#define kHOSTNAME @"192.168.1.101"
+//
+
+//-------------------------聊天相关接口------------------------------------------------
+#define kFILEHOST   [NSString stringWithFormat:@"http://%@:9090",kHOSTNAME]
+#define kRegCode    @"/plugins/rdService/user/reg"
+#define kChatUoload @"/plugins/rdService/user/chat/upload"
+#define kPhones     @"/plugins/userService/users/friends"
+//------------------------------------------------------------------------------------
+
+
+//-------------------------托付相关接口-------------------------------------------------
+#define kTashOfferHost @"123.57.137.163"
+//#define kTashOfferHost @"192.168.1.198"
+
+#define kTOHOSt [NSString stringWithFormat:@"http://%@:8080/toserver",kTashOfferHost]
+
+///托付二维码标示
+#define kTOUserTag  @"toUser://"
+
+///获取验证码
+#define kTOGetVerifyCode  @"/app/serverAppUser/getVerifyCode"
+///注册
+#define kTORegist         @"/app/serverAppUser/register"
+///登录
+#define kTOLogin          @"/app/serverAppUser/login"
+///找回密码或完善个人信息
+#define kTOModify         @"/app/serverAppUser/modify"
+///项目列表
+#define kTOAllProject     @"/app/project/getAllProjectList"
+///项目详情
+#define kTOGetProjectInfo @"/app/project/getProjectInfo"
+///项目接包
+#define kTOModifyProject  @"/app/project/modify"
+///收藏项目
+#define kTOProjectCollect @"/app/project/collect"
+///所有收藏的项目
+#define kTOAllProjectCollect @"/app/project/getCollectList"
+///取消收藏项目
+#define kTOcancelCollect @"/app/serverAppUser/cancelCollect"
+
+///所有企业号列表
+#define kTOAllCompanyList  @"/app/serverCompany/getAllCompanyList"
+///获取所有价格标签
+#define kTOAllPriceTag     @"/dic/getAllDictionaryByParentId"
+///发布项目
+#define kTOPublishProject @"/app/project/addProject"
+///获取标签
+#define kTOALLAvailAble  @"/app/label/findAllAvailable"
+///图片上传
+#define kTOPicUpload    @"/common/fileUpload/uploadMorePicture"
+///项目图片展示地址
+#define kTOProjectPicPath @"/uploads/project_picture"
+///企业号图片展示地址
+#define kTOCompanyPicPath @"/uploads/company_logo_picture"
+///企业号资质图片地址
+#define kTOQualificationPicPath @"/uploads/company_qualification_picture"
+///企业号案例图片展示地址
+#define kTOCaseLogoPicPath @"/uploads/case_logo_picture"
+///用户上传头像
+#define kTOUploadUserIcon @"/uploads/user_head_picture"
+
+///企业号详情
+#define kTOGetCompanyInfo    @"/app/serverCompany/getCompanyInfo"
+///用户关注企业号
+#define kTOAttention    @"/app/serverAppUser/attention"
+///企业号资质列表
+#define kTOGetCompanyQualification @"/app/serverCompany/getCompanyQualification"
+///企业号案例列表
+#define kTOGetCasesList @"/app/serverCompany/getCasesList"
+///企业号项目列表
+#define kTOGetPrpjectsList @"/app/serverCompany/getPrpjectsList"
+///企业号认证用户列表
+#define kTOGetUsersList @"/app/serverCompany/getUsersList"
+///我关注的企业号
+#define kTOGetMyAttentionCompanyList @"/app/serverCompany/getMyAttentionCompanyList"
+///取消关注
+#define kTOcancelAttention @"/app/serverAppUser/cancelAttention"
+///企业号查找
+#define kTOfindCompanyByName @"/app/serverCompany/findCompanyByName"
+
+///是否有未读消息
+#define kTOGetMessageFlag @"/app/message/getMessageFlag"
+#define kTOGetMessageList @"/app/message/getMessageList"
+
+///意见反馈
+#define kTOfeedbackInfo @"/app/opinionFeedback/feedbackInfo"
+///检查更新
+#define kTOgetVersionByPortAndType @"/app/versionUpdate/getVersionByPortAndType"
+///隐私设置
+#define kTOsetPrivate @"/app/serverAppUser/setPrivate"
+///获取隐私设置
+#define kTOgetPrivate @"/app/serverAppUser/getPrivate"
+
+///退出登录
+#define kTOLogout   @"/app/serverAppUser/logout"
+
+///通过项目ID查找匹配的好友
+#define kTOgetUsersByProjectIdAndUserId @"/app/serverAppUser/getUsersByProjectIdAndUserId"
+
+///通过手机号查找好友
+#define kTOgetUserInfoByPhone @"/app/serverAppUser/getUserInfoByPhone"
+///根据ID获取用户信息
+#define kTOgetInfo @"/app/serverAppUser/getInfo"
+
+//是否允许聊天接口
+#define kTOgetChatStatus @"/app/serverAppUser/getChatStatus"
+#import "TouchImageView.h"
+#import "CustomTable.h"
+//------------------------------------------------------------------------------------
+
+#define kVersion    @"/plugins/rdService/setting/version"
+
+#define kKey      @"uxRDduAkEa0r9E8i0ErMlA=="
+#define kSecret   [[NSUserDefaults standardUserDefaults] objectForKey:@"secret"]
+
+#define kRESOURCE @"taskoffer"
+//#define kPORT     [[[NSUserDefaults standardUserDefaults] objectForKey:kPORT] intValue]
+#define kPORT 5232
+
+#define IsIOS7 ([[[UIDevice currentDevice] systemVersion] floatValue] >=7.0 ? YES : NO)
+
+#define IsIOS8 ([[[UIDevice currentDevice] systemVersion] floatValue] >=8.0 ? YES : NO)
+
+#define RespondToSel_CurrMode [UIScreen instancesRespondToSelector:@selector(currentMode)]
+#define iPhone4SRealSize CGSizeMake(640, 960)
+#define iPhone5RealSize CGSizeMake(640, 1136)
+#define iPhone6RealSize CGSizeMake(750, 1334)
+#define iPhone6PlusRealSize CGSizeMake(1080, 1920)
+
+#define CurrentDeviceRealSize [[[UIScreen mainScreen] currentMode] size]
+//是否为iphone5 的尺寸
+#define iPhone4S RespondToSel_CurrMode && CGSizeEqualToSize(iPhone4SRealSize, CurrentDeviceRealSize)
+#define iPhone5 RespondToSel_CurrMode && CGSizeEqualToSize(iPhone5RealSize, CurrentDeviceRealSize)
+#define iPhone6 RespondToSel_CurrMode && CGSizeEqualToSize(iPhone6RealSize, CurrentDeviceRealSize)
+#define iPhone6Plus RespondToSel_CurrMode && CGSizeEqualToSize(iPhone6PlusRealSize, CurrentDeviceRealSize)
+
+
+#ifdef DEBUG
+#define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+//#define DLog(...)
+#else
+#define DLog(...)
+#endif
+
+#define IsIOS7 ([[[UIDevice currentDevice] systemVersion] floatValue] >=7.0 ? YES : NO)
+#define isIOS8 ([[[UIDevice currentDevice] systemVersion] floatValue] >=8.0 ? YES : NO)
+
+
+///好友信息的选择
+#define kAllFriend     @"both"
+#define kFriendRequest @"from"
+///接收到好友信息
+#define kVcard         @"vcard"
+
+
+///消息类型
+#define kText          @"text"
+#define kAudio         @"audio"
+#define kPhoto         @"photo"
+#define kProjectOutsourcing  @"Outsourcing"
+//项目
+#define kProject       @"project"
+//名片
+#define kCard          @"card"
+//企业号
+#define kCompany       @"company"
+//案例
+#define kCase          @"cases"
+
+#define kUserName      @"username"
+#define kPassWord      @"password"
+#define kFirstLog      @"firstLog"
+
+///系统推送唯一标示
+#define kSystemPush    @"admin@imserver"
+#define kPUSH          @"kPush"
+#define kChangeFriendPush @"kChangeFriendPush"
+
+//群聊的标示
+#define kRoomID        @"roomID"
+#define kRoomName      @"roomName"
+
+///二维码标示
+#define kSingeChatSign @"rndim://user/"
+#define kGroupChatSing @"rndim://group/"
+
+///从xmpp中继承出来的可以复用的类
+///个人信息
+#import "XMPPUserInfo.h"
+///好友信息
+#import "XMPPFriendInfo.h"
+///聊天信息
+#import "XMPPMessageInfo.h"
+///最近联系人
+#import "XMPPContactInfo.h"
+
+#define kGetMyRoom    @"http://jabber.org/protocol/muc#rooms"
+
+///各种帮助类
+#import "TimeHelper.h"
+#import "ToolHelper.h"
+#import "XMPPDataHelper.h"
+#import "XMPPHelper.h"
+#import "XMPPNetReachHelper.h"
+#import "XMPPRoomHelper.h"
+#import "XMPPRosterHelper.h"
+#import "XMPPVCardHelper.h"
+#import "SLHttpRequestHandler.h"
+#import "SeparateByArray.h"
+#import "RedViewHelper.h"
+
+#import "HUDView.h"
+
+#import "FriendUserInfo.h"
+
+#endif
+
+
+
+

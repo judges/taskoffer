@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14B25" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="DialogueModel" representedClassName="DialogueModel" syncable="YES">
+        <attribute name="contentStr" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hasRed" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="iconStr" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="myJidStr" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nameStr" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="otherJidStr" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timeStr" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="DialogueModel" positionX="-63" positionY="-18" width="128" height="150"/>
+    </elements>
+</model>

@@ -1,0 +1,35 @@
+//
+//  PrefixHeader.pch
+//  TaskOffer
+//
+//  Created by BourbonZ on 15/3/16.
+//  Copyright (c) 2015年 Bourbon. All rights reserved.
+//
+
+#ifndef TaskOffer_PrefixHeader_pch
+#define TaskOffer_PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#ifdef __OBJC__
+
+#define kDefaultBarColor  @"004181"
+#define kDefaultBackColor @"ffffff"
+#define kDefaultTextColor @"5aacff"
+#define kDefaultOrgangeColor @"FD6947"
+#define kDefaultTagBackColor @"7C96AF"
+#define kDefaultGrayColor @"efefef"
+
+#define kUserDefaultIcon   [UIImage imageNamed:@"user_header_placeholder"]
+
+#define SD_WEBP // 使用webp格式的图片
+
+#import "XMPPIM-Prefix.pch"
+
+///当前用户
+#import "UserInfo.h"
+
+#endif
+
+#endif
